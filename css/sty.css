@@ -1,0 +1,31 @@
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>#footer-wrap{
+    font-family: 方正舒体;
+    font-size: 16px;
+}
+#waline-edit{
+    width: 759px;
+    padding: 10px;
+    background-image: url(/img/c2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    resize: none;
+    color: rgb(0, 0, 0);
+    vertical-align: baseline; 
+    caret-color:#000000; 
+    
+}
+#waline-edit::-webkit-input-placeholder{
+    color: rgb(0, 0, 0);
+    
+}
+.vpower{
+    display: none;
+}
+#waline-link:hover,#waline-mail:hover,#waline-nick:hover{
+    background-color: rgba(75, 75, 75, 0.575);
+}
+.post-copyright{
+border-radius: 20px;
+background-color: hsla(0, 33%, 1%, 0.829);
+box-shadow: 0px 0px 5px  2px #7c7c7c;
+}
