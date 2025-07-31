@@ -1,0 +1,401 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Google Hacking 语法 | iHMOD</title><meta name="author" content="秋奕白"><meta name="copyright" content="秋奕白"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffff"><meta name="description" content="Google Hacking 语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Hacking 语法">
+<meta property="og:url" content="https://ihmod.github.io/posts/f8b0d770.html">
+<meta property="og:site_name" content="iHMOD">
+<meta property="og:description" content="Google Hacking 语法">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ihmod.github.io/img/IHMOD1.png">
+<meta property="article:published_time" content="2025-07-16T08:58:46.396Z">
+<meta property="article:modified_time" content="2025-07-16T09:19:34.068Z">
+<meta property="article:author" content="秋奕白">
+<meta property="article:tag" content="google hacking">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ihmod.github.io/img/IHMOD1.png"><link rel="shortcut icon" href="/img/V-02.ico"><link rel="canonical" href="https://ihmod.github.io/posts/f8b0d770.html"><link rel="preconnect" href="//unpkg.com"/><link rel="stylesheet" href="/css/index.css?v=4.10.0"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@5.0.24/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#10C5F7","bgDark":"#10C5F7","position":"top-center"},
+  infinitegrid: {
+    js: 'https://unpkg.com/@egjs/infinitegrid@4.10.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Google Hacking 语法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-07-16 17:19:34'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/cursors.css"><link rel="stylesheet" href="/css/font.css"><link rel="stylesheet" href="/css/iconfont.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/my_tx.jpg" onerror="onerror=null;src='/img/链接.png'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-shijianzhou"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-biaoqian"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-fenlei"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-xiangmu_xiangmuguanli"></i><span> 项目</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="iHMOD"><span class="site-name">iHMOD</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-shijianzhou"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-biaoqian"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-fenlei"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-xiangmu_xiangmuguanli"></i><span> 项目</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Google Hacking 语法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-16T08:58:46.396Z" title="发表于 2025-07-16 16:58:46">2025-07-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-16T09:19:34.068Z" title="更新于 2025-07-16 17:19:34">2025-07-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E5%AE%89/">网安</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>22分钟</span></span></div></div></div><article class="post-content" id="article-container"><blockquote>
+<p>可以自行选择payload生成社工字典，使用工具跑一跑</p>
+</blockquote>
+<ul>
+<li><p>查找语法示例</p>
+<p>intext:管理<br>filetype:mdb<br>inurl:file<br>site:xx.com filetype:txt  （查找TXT文件 其他的依次内推）<br>site:xx.com intext:管理<br>site:xx.com inurl:login<br>site:xx.com intitle:后台</p>
+</li>
+<li><p>查找某个网站的后台地址<br> site:xxx.com intext:管理|后台|登录|登陆|用户名|密码|系统|账号|login|system|admin<br> inurl:edu.cn intitle:管理<br> site:xxx.com inurl:login|inurl:admin|inurl:admin_login|inurl:system<br> site:xxx.com intitle:管理|后台|后台管理|登录|登陆<br> inurl:login|admin|admin_login|login_admin|system|user<br> site:xxx.com</p>
+</li>
+<li><p>查找文本内容<br> site:xxx.com intext:管理|后台|登录|用户名|密码|验证码|系统|admin|login|username|password</p>
+</li>
+<li><p>查找可注入点<br> site:xxx.com inurl:aspx|jsp|php|asp<br> site:xxx.com inurl:php?id&#x3D;</p>
+</li>
+<li><p>查找文件上传漏洞<br> site:xxx.com inurl:file|load|editor|files|</p>
+</li>
+<li><p>查找eweb编辑器<br> site:xxx.com inurl:ewebeditor|editor|uploadfile|eweb|edit</p>
+</li>
+<li><p>查找存在的数据库<br> site:xxx.com filetype:mdb<br> site:xxx.com filetype:数据库格式</p>
+</li>
+<li><p>查看脚本类型<br> site:xxx.com filetype:asp&#x2F;aspx&#x2F;php&#x2F;jsp<br> site:xxx.com filetype:php</p>
+</li>
+<li><p>查找目录遍历漏洞<br> site:xxx.com intitle:index of </p>
+</li>
+<li><p>社工信息<br> site:xxx.com intitle:账号|密码|工号|学号|身份证</p>
+</li>
+<li><p>搜索各类开源的网站上面的信息<br> site:github.com intext:xiaodi8.com</p>
+</li>
+<li><p>实战演示：<br>首先用google搜索这个站点的基本情况</p>
+<p> site:xxx.com<br>从搜索结果中找到了几处该站点的域名</p>
+<p> <a target="_blank" rel="noopener" href="http://aaa.xxx.com/">http://aaa.xxx.com</a><br> <a target="_blank" rel="noopener" href="http://bbb.xxx.com/">http://bbb.xxx.com</a><br> <a target="_blank" rel="noopener" href="http://ccc.xxx.com/">http://ccc.xxx.com</a><br>然后查看这几个域名的ip，并确认是否存在CDN</p>
+<p>发现不存在CDN服务，并且子域名ip有的也不同</p>
+<p>然后搜索该站点的后台地址</p>
+<p> site:xxx.com intext:管理<br> site:xxx.com inurl:login<br> site:xxx.com inurl:admin<br> site:xxx.com intitle:管理<br> 等其他方式也可以，自行组合即可<br>最终获取到了多个后台地址</p>
+<p>然后查看服务器脚本语言</p>
+<p>site:aaa.xxx.com filetype:asp<br> site:aaa.xxx.com filetype:php<br> site:aaa.xxx.com filetype:aspx<br> site:aaa.xxx.com filetype:jsp<br> 等其他方式也可判断<br>获取了基本的搭建组合后</p>
+<p>下一步就尝试获取漏洞了</p>
+<p>site:aaa.xxx.com intext:ftp:&#x2F;&#x2F;<em>.</em><br> site:bbb.xxx.com inurl:file<br> site:ccc.xxx.com inurl:load<br> 等其他漏洞的关键字自行搜索<br>得到地址后就可以进行下一步渗透了</p>
+</li>
+<li><p>获取二级域名<br> site:xxx.com </p>
+</li>
+<li><p>获取邮箱地址<br>site:xxx.com intext:*@xxx.com</p>
+</li>
+<li><p>获取电话信息<br> site:xxx.com intext:电话</p>
+</li>
+<li><p>查看服务器使用的程序<br>site:xx.com filetype:asp<br>site:xx.com filetype:php<br>site:xx.com filetype:jsp</p>
+</li>
+<li><p>查看上传漏洞：<br>site:xx.com inurl:file<br>site:xx.com inurl:load</p>
+</li>
+<li><p>查找注入点：<br>site:xx.com filetype:asp<br>site:tw inurl:asp?id&#x3D; 这个是找台湾的<br>site:jp inurl:asp?id&#x3D; 这个是找日本的<br>site:ko inurl:asp?id&#x3D; 这个是找韩国的<br>依次类推<br>intitle:旁注- 网站xxxfiletype:asp<br>inurl:editor&#x2F;db&#x2F;<br>inurl:eWebEditor&#x2F;db&#x2F;<br>inurl:bbs&#x2F;data&#x2F;<br>inurl:databackup&#x2F;<br>inurl:blog&#x2F;data&#x2F;<br>inurl:okedata<br>inurl:bbs&#x2F;database&#x2F;<br>inurl:conn.asp<br>inc&#x2F;conn.asp</p>
+</li>
+<li><p>管理入口:<br>admin<br>admin_index<br>admin_admin<br>index_admin<br>admin&#x2F;index<br>admin&#x2F;default<br>admin&#x2F;manage<br>admin&#x2F;login<br>manage_index<br>index_manage<br>superadmin<br>说明.txt<br>manager&#x2F;login<br>manager&#x2F;login.asp<br>manager&#x2F;admin.asp<br>login&#x2F;admin&#x2F;admin.asp<br>houtai&#x2F;admin.asp<br>guanli&#x2F;admin.asp<br>denglu&#x2F;admin.asp<br>admin_login&#x2F;admin.asp<br>admin_login&#x2F;login.asp<br>admin&#x2F;manage&#x2F;admin.asp<br>admin&#x2F;manage&#x2F;login.asp<br>admin&#x2F;default&#x2F;admin.asp<br>admin&#x2F;default&#x2F;login.asp<br>member&#x2F;admin.asp<br>member&#x2F;login.asp<br>administrator&#x2F;admin.asp<br>administrator&#x2F;login.asp</p>
+</li>
+<li><p>强大的数据库:<br>database&#x2F;PowerEasy4.mdb #动易网站管理系统4.03数据库<br>database&#x2F;PowerEasy5.mdb<br>database&#x2F;PowerEasy6.mdb<br>database&#x2F;PowerEasy2005.mdb<br>database&#x2F;PowerEasy2006.mdb<br>database&#x2F;PE_Region.mdb<br>data&#x2F;dvbbs7.mdb #动网论坛数据库<br>databackup&#x2F;dvbbs7.mdb #动网论坛备份数据库<br>bbs&#x2F;databackup&#x2F;dvbbs7.mdb #动网论坛备份数据库<br>data&#x2F;zm_marry.asp #动网sp2美化版数据库<br>databackup&#x2F;dvbbs7.mdb<br>admin&#x2F;data&#x2F;qcdn_news.mdb #青创文章管理系统数据库<br>firend.mdb #交友中心数据库<br>database&#x2F;newcloud6.mdb #新云管理系统6.0数据库<br>database&#x2F;%23newasp.mdb #新云网站系统<br>blogdata&#x2F;L-BLOG.mdb #L-BLOG v1.08数据库<br>blog&#x2F;blogdata&#x2F;L-BLOG.mdb #L-BLOG v1.08数据库<br>database&#x2F;bbsxp.mdb #BBSXP论坛数据库<br>bbs&#x2F;database&#x2F;bbsxp.mdb #BBSXP论坛数据库<br>access&#x2F;sf2.mdb #雪人论坛程序v2.0数据库<br>data&#x2F;Leadbbs.mdb #LeadBBS论坛 v3.14数据库<br>bbs&#x2F;Data&#x2F;LeadBBS.mdb #LeadBBS论坛 v3.14数据库<br>bbs&#x2F;access&#x2F;sf2.mdb #雪人论坛程序v2.0数据库<br>fdnews.asp #六合专用BBS数据库<br>bbs&#x2F;fdnews.asp #六合专用BBS数据库<br>admin&#x2F;ydxzdate.asa #雨点下载系统 v2.0+sp1数据库<br>data&#x2F;down.mdb #动感下载系统xp ver2.0数据库<br>data&#x2F;db1.mdb #动感下载系统xp v1.3数据库<br>database&#x2F;Database.mdb #轩溪下载系统 v3.1数据库<br>db&#x2F;xzjddown.mdb #lhdownxp下载系统数据库<br>db&#x2F;play.asp #娱乐先锋论坛 v3.0数据库<br>mdb.asp #惊云下载系统 v1.2数据库<br>admin&#x2F;data&#x2F;user.asp #惊云下载系统 v3.0数据库<br>data_jk&#x2F;joekoe_data.asp #乔客6.0数据库<br>data&#x2F;news3000.asp #沸腾展望新闻系统 v1.1数据库<br>data&#x2F;appoen.mdb #惠信新闻系统4.0数据库<br>data&#x2F;12912.asp #飞龙文章管理系统 v2.1数据库<br>database.asp #动感极品下载管理系统 v3.5<br>download.mdb #华仔软件下载管理系统 v2.3<br>dxxobbs&#x2F;mdb&#x2F;dxxobbs.mdb #dxxobbs论坛数据库<br>db&#x2F;6k.asp #6kbbs 用户名:admin 密码:6kadmin<br>database&#x2F;snowboy.mdb #雪孩论坛 默认后台admin&#x2F;admin_index.asp<br>database&#x2F;%23mmdata.mdb #依爽社区<br>editor&#x2F;db&#x2F;ewebeditor.mdbeWebEditor&#x2F;db&#x2F;ewebeditor.mdb</p>
+</li>
+<li><p>上传漏洞:<br>&#x2F;eWebEditor&#x2F;upload.asp #eWebEditor上传页面<br>&#x2F;editor&#x2F;upload.asp #eWebEditor上传页面<br>&#x2F;bbs&#x2F;upfile.asp #动网论坛上传页面<br>&#x2F;forum&#x2F;upfile.asp #动网论坛上传页面<br>&#x2F;dvbbs&#x2F;upfile.asp #动网论坛上传页面<br>&#x2F;upfile_soft.asp #动力管理系统上传页面<br>&#x2F;upload.asp?action&#x3D;upfile #乔客6.0上传页面<br>&#x2F;upfile.asp #动网论坛上传页面<br>&#x2F;bbs&#x2F;down_addsoft.asp #动网论坛插件上传页面<br>&#x2F;bbs&#x2F;down_picupfile.asp #动网论坛插件上传页面<br>&#x2F;down_picupload.asp #动网论坛插件上传页面<br>&#x2F;admin&#x2F;admin_upfile.asp #管理员后台上传页面<br>&#x2F;admin&#x2F;upfile.asp #管理员后台上传页面<br>&#x2F;admin&#x2F;upload.asp #管理员后台上传页面<br>&#x2F;admin&#x2F;uploadfaceok.asp #尘缘上传页面<br>&#x2F;news&#x2F;admin&#x2F;upfile.asp #新闻管理上传页面<br>&#x2F;admin_upfile.asp #飞龙文章管理系统 v2.0<br>&#x2F;user_upfile.asp #飞龙文章管理系统 v2.0<br>&#x2F;upload_flash.asp #秋叶购物商城上传页面<br>&#x2F;Saveannounce_upload.asp #购物中心上传页面<br>&#x2F;UploadFace.asp #沸腾展望新闻系统 v1.1<br>&#x2F;bbs&#x2F;diy.asp #Domian3.0默认木马<br>&#x2F;UploadSoft&#x2F;diy.asp #Domian3.0默认木马<br>&#x2F;diy.asp #Domian3.0默认木马<br>&#x2F;upload&#x2F;upload.asp #某某文章管理系统<br>&#x2F;mybbs&#x2F;saveup.asp #MYBBS论坛上传页面<br>&#x2F;dxxobbs&#x2F;upload.asp #DxxoBBS论坛上传页面<br>&#x2F;img_upfile.asp #任我飞扬驿站上传页面<br>&#x2F;Upfile_SoftPic.asp #动力管理系统上传页面<br>&#x2F;upfile_flash.asp #秋叶购物商城上传页面</p>
+</li>
+<li><p>PHP的:<br>phpmyadmin<br>include&#x2F;config.inc.php<br>include&#x2F;config.php<br>lib&#x2F;config.php</p>
+</li>
+<li><p>inurl中的管理后台路径<br>nurl:admin&#x2F;manager<br>admin<br>admin_index<br>admin_admin<br>index_admin<br>admin&#x2F;index<br>admin&#x2F;default<br>admin&#x2F;manage<br>admin&#x2F;login<br>manage_index<br>index_manage<br>manager&#x2F;login<br>manager&#x2F;login.asp<br>manager&#x2F;admin.asp<br>login&#x2F;admin&#x2F;admin.asp<br>houtai&#x2F;admin.asp<br>guanli&#x2F;admin.asp<br>denglu&#x2F;admin.asp<br>admin_login&#x2F;admin.asp<br>admin_login&#x2F;login.asp<br>admin&#x2F;manage&#x2F;admin.asp<br>admin&#x2F;manage&#x2F;login.asp<br>admin&#x2F;default&#x2F;admin.asp<br>admin&#x2F;default&#x2F;login.asp<br>member&#x2F;admin.asp<br>member&#x2F;login.asp<br>administrator&#x2F;admin.asp<br>administrator&#x2F;login.asp</p>
+</li>
+<li><p>inurl中的数据库和配置文件<br>inurl:editor&#x2F;db&#x2F;<br>inurl:eWebEditor&#x2F;db&#x2F;<br>inurl:bbs&#x2F;data&#x2F;<br>inurl:databackup&#x2F;<br>inurl:blog&#x2F;data&#x2F;<br>inurl:okedata<br>inurl:bbs&#x2F;database&#x2F;<br>inurl:conn.asp<br>inurl:inc&#x2F;conn.asp<br>inurl:“viewerframe?mode&#x3D;”&#x2F;&#x2F;搜索摄像头地址<br>inurl:db<br>inurl:mdb<br>inurl:config.txt<br>inurl:bash_history<br>inurl:data filetype:mdb &#x2F;&#x2F;搜索mdb格式数据库</p>
+</li>
+<li><p>inurl中的搜索备份文件<br>inurl:temp<br>inurl:tmp<br>inurl:backup<br>inurl:bak</p>
+</li>
+<li><p>inurl中查找注入点<br>site:xx.com filetype:asp<br>site:tw inurl:asp?id&#x3D; &#x2F;&#x2F;这个是找台湾的<br>site:jp inurl:php?id&#x3D; &#x2F;&#x2F; 这个是找日本的<br>site:ko inurl:jsp?id&#x3D; &#x2F;&#x2F; 这个是找韩国的</p>
+</li>
+<li><p>inurl之上传漏洞<br>site:xx.com inurl:file<br>site:xx.com inurl:load</p>
+</li>
+<li><p>目标遍历漏洞<br>Index of &#x2F;admin<br>Index of &#x2F;passwd<br>Index of &#x2F;password<br>Index of &#x2F;mail<br>“Index of &#x2F;” +passwd<br>“Index of &#x2F;” +password.txt<br>“Index of &#x2F;” +.htaccess<br>“Index of &#x2F;secret”<br>“Index of &#x2F;confidential”<br>“Index of &#x2F;root”<br>“Index of &#x2F;cgi-bin”<br>“Index of &#x2F;credit-card”<br>“Index of &#x2F;logs”<br>“Index of &#x2F;config”<br>“indexof&#x2F;”inurl:lib &#x2F;&#x2F;搜索图书馆一般目录遍历下载</p>
+</li>
+<li><p>目录遍历及敏感信息泄露<br>intitle:“index of” etc<br>intitle:“Index of” .sh_history<br>intitle:“Index of” .bash_history<br>intitle:“index of” passwd<br>intitle:“index of” people.lst<br>intitle:“index of” pwd.db<br>intitle:“index of” etc&#x2F;shadow<br>intitle:“index of” spwd<br>intitle:“index of” master.passwd<br>intitle:“index of” htpasswd<br>intitle:“index of” admin<br>inurl:service.pwd<br>intitle:phpmyadmin intext:Create new database &#x2F;&#x2F;搜索phpmyadmin直接进入后台<br>intitle:“php shell*” “Enable stderr” filetype:php&#x2F;&#x2F;批量搜索webshell<br>intitle:“index of” data &#x2F;&#x2F;列出data目录<br>intilte:“error occurred” ODBC request where (select|insert) &#x2F;&#x2F;搜索sql注入出错页面<br>intitle:index.of filetype:log &#x2F;&#x2F;搜索日志文件</p>
+</li>
+<li><p>tomcat<br>如果使用暴力破解成功突破tomcat的basic认证，上传恶意war包，可以很轻易的getshell<br>#site用于限制查询范围,intitle和intext用于匹配tomcat关键字<br>intitle:apache tomcat site:domain</p>
+</li>
+<li><p>weblogic<br>weblogic框架曾爆出不少漏洞，如果存在该框架，是一个突破口<br>#site用于限制查询范围,inurl和intitle用于匹配weblogic的关键字<br>inurl:&#x2F;console&#x2F;login&#x2F;LoginForm.jsp site:domain<br>inurl:&#x2F;console&#x2F;login&#x2F;LoginForm.jsp intitle:Oracle WebLogic Server site:domain<br>inurl:&#x2F;console&#x2F;login&#x2F; intitle:“Oracle WebLogic Server 管理控制台” site:domain</p>
+</li>
+<li><p>jboss<br>jboss框架曾爆出不少漏洞，如果存在该框架，是一个突破口<br>#site用于限制查询范围,inurl用于匹配jboss的关键字<br>inurl:&#x2F;jmx-console&#x2F;htmladaptor site:domain</p>
+</li>
+<li><p>websphere<br>websphere框架曾爆出不少漏洞，如果存在该框架，是一个突破口<br>#site用于限制查询范围,inurl用于匹配websphere的关键字<br>inurl:&#x2F;ibm&#x2F;console&#x2F;logon.jsp site:domain</p>
+</li>
+<li><p>phpmyadmin<br>phpmyadmin是MySQL的管理平台，并且可被爆破，一旦爆破成功，即可获取MySQL的权限，进而提权getshell<br>#site用于限定范围,inurl和intext用于匹配phpMyAdmin的关键字<br>inurl:&#x2F;phpMyAdmin site:domain<br>inurl:&#x2F;phpMyAdmin&#x2F;index.php site:domain<br>inurl:&#x2F;phpMyAdmin&#x2F;index.php site:domain db+information_schema<br>inurl:&#x2F;phpMyAdmin&#x2F;index.php intext:phpMyAdmin site:domain</p>
+</li>
+<li><p>webmin<br>webmin是一个web版的linux系统管理工具，默认情况下工作在web的10000端口上<br>#site用于限制查询范围 intitle和intext用于匹配webmin的关键字<br>intitle:Login to Webmin intext:“login to the Webmin server on” site:domain</p>
+</li>
+<li><p>wordpress<br>wordpress是PHP的开源博客平台，其框架存在大量漏洞，尤其其框架存在很多SQL注入，通过SQL注入getshell<br>#site用于限制查询范围,inurl和index of用于匹配wordpress的关键字<br>inurl:&#x2F;wp-login.php site:domain<br>index of &#x2F;wp-content&#x2F;uploads inurl:&#x2F;wp-login.php site:domain<br>inurl:&#x2F;wp-content&#x2F;themes&#x2F;theagency site:domain</p>
+</li>
+<li><p>joomla<br>joomla框架曾爆出不少漏洞，如果存在该框架，是一个突破口<br>#site用于限制查询范围,inurl用于匹配joomla的关键字<br>inurl:&#x2F;administrator&#x2F;index.php site:domain<br>inurl:index.php?option&#x3D;com_advertisementboard site:domain 找注入<br>inurl:index.php?option&#x3D;com_carocci site:domain<br>inurl:index.php?option&#x3D;com_product site:domain<br>inurl:&#x2F;administrator&#x2F;index.php site:domain</p>
+</li>
+<li><p>drupal<br>drupal框架曾爆出不少漏洞，如果存在该框架，是一个突破口<br>#site用于限制查询范围,inurl和intext用于匹配drupal的关键字<br>inurl:CHANGELOG.txt intext:drupal intext:“SA-CORE” -site:github.com -site:domain</p>
+</li>
+<li><p>特征查找<br>个人觉得这个不错<br>#在使用时最好加上site限制查询范围,且版本号也可忽略<br>power by wordpress powered by discuz x3.2<br>powered by phpcms 2008 powered by drupal 7<br>powered by dedecmsv57_gbk powered by CubeCart 3.0.6<br>Powered by phpBB 2.0.6 powered by paBugs 2.0 Beta 3<br>inurl:wp-login.php inurl:&#x2F;administrator&#x2F;index.php<br>inurl:&#x2F;admina.php</p>
+</li>
+<li><p>owa<br>outlook邮箱<br>inurl:&#x2F;owa&#x2F;auth&#x2F;logon.aspx site:domain</p>
+</li>
+<li><p>vpn<br>inurl:&#x2F;sslvpn site:domain<br>mirapoint</p>
+</li>
+<li><p>自行添加site以限制查询范围<br>inurl:&#x2F;cgi-bin&#x2F;search.cgi site:domain<br>inurl:&#x2F;cgi-bin&#x2F;madmin.cgi site:domain</p>
+</li>
+<li><p>zimbra<br>自行添加site以限制查询范围<br>inurl:7071&#x2F;zimbraAdmin&#x2F; site:domain<br>inurl:&#x2F;help&#x2F;en_US&#x2F;standard&#x2F;version.htm site:domain</p>
+</li>
+<li><p>常见的后台地址<br>有用 ！！ 自行添加site以限制查询范围<br>inurl:&#x2F;manager&#x2F;login.php site:domain<br>inurl:&#x2F;cms&#x2F;login.php site:domain<br>inurl:&#x2F;manage&#x2F;index.php site:domain<br>inurl:&#x2F;system&#x2F;login.php site:domain<br>inurl:&#x2F;webadmin&#x2F;login.php site:domain<br>inurl:admin_login.php intitle:admin login site:domain<br>inurl:admin_login.php intitle:admin page site:domain<br>inurl:&#x2F;admin&#x2F;login.php site:domain<br>inurl:&#x2F;admin&#x2F;index.php site:domain<br>inurl:&#x2F;system&#x2F;adminlogin.asp site:domain<br>inurl:&#x2F;manage&#x2F;login.aspx site:domain<br>inurl:&#x2F;sysadm&#x2F;index.php site:domain<br>intext:“Website Design &amp; Developed By : WebSay” 默认后台&#x2F;admin<br>intext:“Powered by ENS Consultants” 默认后台&#x2F;admin&#x2F;login.php<br>intext:“Desenvolvimento - MW Way” 默认后台&#x2F;admin&#x2F;index.php<br>inurl:.php?id&#x3D; intext:“Web realizada por Soma Estudio”<br>inurl:&#x2F;_mycps&#x2F;login.php<br>intext:“design by weli” 默认后台: &#x2F;adm&#x2F;login.php 除了弱口令还有注入(<a href="mailto:&#x6c;&#105;&#110;&#x6a;&#105;&#122;&#x65;&#110;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#x6c;&#105;&#110;&#x6a;&#105;&#122;&#x65;&#110;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;</a>&#x2F;lin719192)<br>inurl:categorysearch.php?indus&#x3D; site:domain SQL注入</p>
+</li>
+<li><p>svn<br>自行添加site以限制查询范围<br>inurl:&#x2F;.svn&#x2F;entries site:domain</p>
+</li>
+<li><p>上传点<br>自行添加site以限制查询范围<br>intext:” Powered by JADBM “ JADBM Cms upload shell 注册后登陆上传即可<br>inurl:”&#x2F;index.php&#x2F;frontend&#x2F;login&#x2F;en” Estate cms upload shell 注册后登陆上传即可<br>inurl:&#x2F;Content&#x2F;Roxy_Fileman&#x2F; 该路径下直接就是上传点<br>index of:“filemanager&#x2F;dialog.php” 该脚本就是上传脚本直接上传即可<br>intext:“Desenvolvido por Webnet Soluções Tecnológicas.” fck上传<br>inurl:“subir_foto.php” 上传点<br>inrul:”&#x2F;imce?dir&#x3D;” intitle:“File Browser”<br>inurl:“Powered by Vision Helpdesk 3.9.10 Stable” 注册后登陆进去编辑个人配置上传<br>index of &#x2F;admin&#x2F;fckeditor site:.tw<br>inurl:&#x2F;ewebeditor&#x2F; site:.tw<br>inurl:&#x2F;admin&#x2F;upload_file.php<br>inurl:&#x2F;admin&#x2F;upfile.php<br>inurl:&#x2F;admin&#x2F;upload.asp</p>
+</li>
+<li><p>文件包含和命令执行<br>自行添加site以限制查询范围<br>inurl:footer.inc.php?settings&#x3D;<br>inurl:&#x2F;pb_inc&#x2F;admincenter&#x2F;index.php?page&#x3D;<br>inurl:&#x2F;pnadmin&#x2F;categories.inc.php?subpage&#x3D;<br>inurl:&#x2F;index.php??view&#x3D;src&#x2F;sistema&#x2F;vistas&#x2F;<br>inurl:&#x2F;edit.php?em&#x3D;file&amp;filename&#x3D;<br>inurl:&#x2F;path_to_athena&#x2F;athena.php?athena_dir&#x3D; 远程包含<br>inurl:&#x2F;path_to_qnews&#x2F;q-news.php?id&#x3D; 远程包含<br>inurl:&#x2F;inc&#x2F;backend_settings.php?cmd&#x3D;<br>inurl:login.action strus2系列执行漏洞利用<br>inurl:php?x&#x3D; inurl:php?open&#x3D;<br>inurl:php?visualizar&#x3D; inurl:php?pagina&#x3D;<br>inurl:php?inc&#x3D; inurl:php?include_file&#x3D;<br>inurl:php?page&#x3D; inurl:php?pg&#x3D;<br>inurl:php?show&#x3D; inurl:php?cat&#x3D;<br>inurl:php?file&#x3D; inurl:php?path_local&#x3D;<br>inurl:php?filnavn&#x3D; inurl:php?HCL_path&#x3D;<br>inurl:php?doc&#x3D; inurl:php?appdir&#x3D;<br>inurl:php?phpbb_root_dir&#x3D; inurl:php?phpc_root_path&#x3D;<br>inurl:php?path_pre&#x3D; inurl:php?nic&#x3D;<br>inurl:php?sec&#x3D; inurl:php?content&#x3D;<br>inurl:php?link&#x3D; inurl:php?filename&#x3D;<br>inurl:php?dir&#x3D; inurl:php?document&#x3D;<br>inurl:index.php?view&#x3D; inurl:.php?locate&#x3D;<br>inurl:.php?place&#x3D; inurl:.php?layout&#x3D;<br>inurl:.php?go&#x3D; inurl:.php?catch&#x3D;<br>inurl:.php?mode&#x3D; inurl:.php?name&#x3D;<br>inurl:.php?loc&#x3D; inurl:.php?f&#x3D;<br>inurl:.php?inf&#x3D; inurl:.php?pg&#x3D;<br>inurl:.php?load&#x3D; inurl:.php?naam&#x3D;<br>allinurl:php?page&#x3D; allinurl:php?file&#x3D;<br>inurl:php?x&#x3D; inurl:admin.php?cal_dir&#x3D;<br>inurl:php?include&#x3D; inurl:php?nav&#x3D;<br>inurl:.php?sel&#x3D; inurl:php?p&#x3D;<br>inurl:php?conf&#x3D; inurl:php?prefix&#x3D;<br>inurl:theme.php?THEME_DIR&#x3D;<br>inurl:php?lvc_include_dir&#x3D;<br>inurl:php?basepath&#x3D; inurl:php?pm_path&#x3D;<br>inurl:php?user_inc&#x3D; inurl:php?cutepath&#x3D;<br>inurl:php?fil_config&#x3D; inurl:php?libpach&#x3D;<br>inurl:php?pivot_path&#x3D; inurl:php?rep&#x3D;<br>inurl:php?conteudo&#x3D; inurl:php?root&#x3D;<br>inurl:php?configFile inurl:php?pageurl<br>inurl:php?inter_url inurl:php?url&#x3D;<br>inurl:php?cmd&#x3D; inurl:path.php?my&#x3D;<br>inurl:php?xlink&#x3D; inurl:php?to&#x3D;<br>inurl:file.php?disp&#x3D;</p>
+</li>
+<li><p>商城类<br>自行添加site以限制查询范围<br>inurl:”.php?catid&#x3D;” intext:“View cart”<br>inurl:”.php?catid&#x3D;” intext:“Buy Now”<br>inurl:”.php?catid&#x3D;” intext:“add to cart”<br>inurl:”.php?catid&#x3D;” intext:“shopping”<br>inurl:”.php?catid&#x3D;” intext:“boutique”<br>inurl:”.php?catid&#x3D;” intext:”&#x2F;store&#x2F;“<br>inurl:”.php?catid&#x3D;” intext:”&#x2F;shop&#x2F;“<br>inurl:”.php?catid&#x3D;” intext:“Toys”<br>inurl:details.php?BookID&#x3D;<br>inurl:shop.php?do&#x3D;part&amp;id&#x3D;</p>
+</li>
+<li><p>CMS<br>自行添加site以限制查询范围<br>inurl:article.php?ID&#x3D; inurl:newsDetail.php?id&#x3D;<br>inurl:show.php?id&#x3D; inurl:newsone.php?id&#x3D;<br>inurl:news.php?id&#x3D; inurl:event.php?id&#x3D;<br>inurl:preview.php?id&#x3D; inurl:pages.php?id&#x3D;<br>inurl:main.php?id&#x3D; inurl:prod_detail.php?id&#x3D;<br>inurl:view.php?id&#x3D; inurl:product.php?id&#x3D;<br>inurl:contact.php?Id&#x3D; inurl:display_item.php?id&#x3D;<br>inurl:item.php?id&#x3D; inurl:view_items.php?id&#x3D;<br>inurl:details.asp?id&#x3D; inurl:profile.asp?id&#x3D;<br>inurl:content.asp?id&#x3D; inurl:display_item.asp?id&#x3D;<br>inurl:view_detail.asp?ID&#x3D; inurl:section.php?id&#x3D;<br>inurl:theme.php?id&#x3D; inurl:produit.php?id&#x3D;<br>inurl:chappies.php?id&#x3D; inurl:readnews.php?id&#x3D;<br>inurl:rub.php?idr&#x3D; inurl:pop.php?id&#x3D;<br>inurl:person.php?id&#x3D; inurl:read.php?id&#x3D;<br>inurl:reagir.php?num&#x3D; inurl:staff_id&#x3D;<br>inurl:gallery.php?id&#x3D; inurl:humor.php?id&#x3D;<br>inurl:spr.php?id&#x3D; inurl:gery.php?id&#x3D;<br>inurl:profile_view.php?id&#x3D;<br>inurl:fellows.php?id&#x3D; inurl:ray.php?id&#x3D;<br>inurl:productinfo.php?id&#x3D;<br>inurl:file.php?cont&#x3D; inurl:include.php?chapter&#x3D;<br>inurl:principal.php?param&#x3D;<br>inurl:general.php?menue&#x3D; inurl:php?pref&#x3D;<br>inurl:nota.php?chapter&#x3D; inurl:php?str&#x3D;<br>inurl:php?corpo&#x3D; inurl:press.php?[]*&#x3D;<br>inurl:asp?pid&#x3D; inurl:php?id&#x3D;<br>inurl:aspx?id&#x3D; inurl:jsp?id&#x3D;<br>inurl:do?id&#x3D; inurl:cgi?id&#x3D;</p>
+</li>
+<li><p>万能密码<br>自行添加site以限制查询范围<br>inurl:“wladmin&#x2F;login.asp”<br>Username : ‘&#x3D;’ ‘or’<br>Password : ‘&#x3D;’ ‘or’<br>intext:POWERED BY Versatile Software Services 默认后台&#x2F;alogin.aspx<br>User &#x3D;&#x3D;&gt; ‘or’’&#x3D;’<br>Pass &#x3D;&#x3D;&gt; ‘or’’&#x3D;’<br>inurl:&#x2F;media.php?hal&#x3D;login<br>Email: ‘&#x3D;’‘or’@gmail.com<br>Pass: ‘&#x3D;’‘or’<br>intext:“Powered by : Best Webmasterz.” 默认后台&#x2F;admin<br>User : ‘&#x3D;’ ‘OR’<br>Pass : ‘&#x3D;’ ‘OR’<br>intext:“Web Design and Maintenance by Cloud 5 Solutions” 默认后台&#x2F;admin&#x2F;login.php<br>User : ‘&#x3D;’ ‘OR’<br>Pass : ‘&#x3D;’ ‘OR’<br>intext:“网站设计：火龙科技” 默认后台&#x2F;maintain&#x2F;login.php<br>Username : ‘&#x3D;’ ‘or’<br>Password : ‘&#x3D;’ ‘or’<br>intext:“Powered by Moodyworld” 默认后台&#x2F;admin&#x2F;<br>Username : ‘&#x3D;’ ‘or’<br>Password : ‘&#x3D;’ ‘or’</p>
+</li>
+<li><p>敏感信息泄露<br>自行添加site以限制查询范围<br>site:domain inurl:&#x2F;phpinfo.php<br>filetype:log “PHP Parse error”| “PHP Warning”<br>site:domain “id&#x3D;” &amp; intext:”Warning: mysql_fetch_array()<br>site:domain “id&#x3D;” &amp; intext:”Warning: getimagesize()<br>site:domain “id&#x3D;” &amp; intext:”Warning: array_merge()<br>site:domain “id&#x3D;” &amp; intext:”Warning: mysql_fetch_assoc()<br>site:domain “id&#x3D;” &amp; intext:”Warning: mysql_result()<br>site:domain “id&#x3D;” &amp; intext:”Warning: pg_exec()<br>site:domain “id&#x3D;” &amp; intext:”Warning: require()<br>inurl:&#x2F;robots.txt site:.<br>inurl:&#x2F;application&#x2F;configs&#x2F; 配置文件名为&#x2F;application&#x2F;configs&#x2F;application.ini<br>—————————-htpasswd——————————–<br>htpasswd.bak filetype:htpasswd<br>—————————–cisco vpn—————————-<br>filetype:pcf “GroupPwd”<br>cisco在线密码解密网站&#x3D;&#x3D;&gt;<a target="_blank" rel="noopener" href="https://www.unix-ag.uni-kl.de/~massar/bin/cisco-decode">https://www.unix-ag.uni-kl.de/~massar/bin/cisco-decode</a><br>—————–ftp 账号密码—————————–<br>“index of&#x2F;” “ws_ftp.ini” “parent directory”<br>“your password is” filetype:log<br>filetype:ini inurl:“serv-u.ini”<br>filetype:ini inurl:flashFXP.ini<br>filetype:ini ServUDaemon<br>filetype:ini wcx_ftp<br>filetype:ini ws_ftp pwd<br>ext:inc “pwd&#x3D;” “UID&#x3D;”<br>auth_user_file.txt<br>filetype:sql inurl:backup inurl:wp-content<br>inurl:&#x2F;eWebEditor&#x2F;db&#x2F; site:domain<br>filetype:xls QQ site:cn</p>
+</li>
+<li><p>目录遍历<br>site:domain index of &#x2F;admin<br>site:domain index of &#x2F;upfiles<br>site:domain index of &#x2F;fckeditor&#x2F;editor&#x2F;<br>site:domain index of &#x2F;admin&#x2F;uploadfile<br>site:domain index of &#x2F;admin&#x2F;file<br>site:domain index of &#x2F;system&#x2F;file<br>site:domain index of &#x2F;phpmyadmin<br>site:domain index of &#x2F;web&#x2F;backup&#x2F;<br>inurl:&#x2F;phpmyadmin&#x2F;index.php site:domain</p>
+</li>
+<li><p>遗留webshell<br>自行添加site以限制查询范围<br>inurl:b374k.php filetype:php<br>inurl:c99.php<br>inurl:c100.php Generation time:<br>inurl:itsecteam_shell.php<br>intext:x2300 Locus7Shell v. 1.0a beta Modded by<br>intext:c99shell inurl:c99.php<br>powered by Captain Crunch Security Team<br>“inurl:c99.php” + “intext:safe”<br>intitle:r57shell<br>intitle:c99shell +uname<br>inurl:c99.php uid&#x3D;0(root)<br>intitle:c99shell+filetype:php<br>intitle:ly0kha shell<br>inurl:.php “cURL: ON MySQL: ON MSSQL: OFF”<br>“Shell” filetypehp intext:“uname -a:” “EDT 2010”<br>intitle:“intitle:r57shell”<br>inurl:“c99.php” &amp; intext:Encoder Tools Proc.<br>inurl:“c100.php” &amp; intext:Encoder Tools Proc.<br>intitle:“Shell” inurl:”.php” &amp; intext:Encoder Tools Proc.</p>
+</li>
+</ul>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/google-hacking/">google hacking</a></div><div class="post_share"><div class="social-share" data-image="/img/IHMOD1.png" data-sites="wechat"></div><link rel="stylesheet" href="https://unpkg.com/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://unpkg.com/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/312e3d12.html" title="信息收集"><img class="cover" src="/img/IHMOD1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">信息收集</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/my_tx.jpg" onerror="this.onerror=null;this.src='/img/%E9%93%BE%E6%8E%A5.png'" alt="avatar"/></div><div class="author-info__name">秋奕白</div><div class="author-info__description">慢就是快</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/f8b0d770.html" title="Google Hacking 语法"><img src="/img/IHMOD1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Google Hacking 语法"/></a><div class="content"><a class="title" href="/posts/f8b0d770.html" title="Google Hacking 语法">Google Hacking 语法</a><time datetime="2025-07-16T08:58:46.396Z" title="发表于 2025-07-16 16:58:46">2025-07-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/312e3d12.html" title="信息收集"><img src="/img/IHMOD1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="信息收集"/></a><div class="content"><a class="title" href="/posts/312e3d12.html" title="信息收集">信息收集</a><time datetime="2025-07-16T08:27:29.623Z" title="发表于 2025-07-16 16:27:29">2025-07-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/a6f23c9d.html" title="PHP学习"><img src="/img/IHMOD1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PHP学习"/></a><div class="content"><a class="title" href="/posts/a6f23c9d.html" title="PHP学习">PHP学习</a><time datetime="2025-07-15T15:51:11.954Z" title="发表于 2025-07-15 23:51:11">2025-07-15</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By 秋奕白</div><div class="footer_custom_text"><span id="runtime"></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.10.0"></script><script src="/js/main.js?v=4.10.0"></script><script src="/js/tw_cn.js?v=4.10.0"></script><script src="https://unpkg.com/@fancyapps/ui@5.0.24/dist/fancybox/fancybox.umd.js"></script><script src="https://unpkg.com/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://unpkg.com/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://unpkg.com/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://unpkg.com/mermaid@10.5.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script src="https://unpkg.com/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://unpkg.com/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://unpkg.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.10.0"></script></div></div></body></html>
