@@ -200,6 +200,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -225,6 +228,7 @@ jobs:
           path: public
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
 ```
 
@@ -403,11 +407,16 @@ Expected: the repository opens on `main`; the `master` branch still exists as a 
 
 **Files:** none (GitHub settings + verification).
 
-- [ ] **Step 1: Manual — set Pages source**
+- [ ] **Step 1: Manual — set Pages source and allow `main` in the deployment environment**
 
 GitHub repository → Settings → Pages → Build and deployment → Source: **GitHub Actions**.
 
 Do not choose "Deploy from a branch".
+
+Then: Settings → Environments → `github-pages` → **Deployment branches and tags** → allow `main` (or select "All branches") → Save.
+
+Without this, the workflow fails with:
+`Branch "main" is not allowed to deploy to github-pages due to environment protection rules.`
 
 - [ ] **Step 2: Trigger the workflow**
 
