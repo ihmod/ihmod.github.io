@@ -1,0 +1,26 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
+CNAME
+
+# IDE / editor
+.idea/
+.vscode/
+.obsidian/
+
+# Secrets
+.env
+.env.*
+secrets/
+github
+github.pub
+*.key
+*.pem
+
+# Local backups
+backups/

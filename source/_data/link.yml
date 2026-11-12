@@ -1,0 +1,32 @@
+- class_name: 网站
+  class_desc: 推荐一些好用的网站
+  link_list:
+    - name: 阿虚的储物间
+      link: https://axutongxue.com/
+      avatar: https://s2.loli.net/2022/11/01/jhCPYUfnVOTsHS7.jpg
+      descr: 啥都有的储物间
+
+    - name: jdk
+      link: https://repo.huaweicloud.com/java/jdk/
+      avatar: https://s2.loli.net/2023/11/16/8xFG4AMr6agT5QV.png
+      descr: 华为 jdk仓库
+
+    - name: npm镜像站
+      link: https://registry.npmmirror.com/binary.html
+      avatar: https://s2.loli.net/2023/11/16/TCc2hqLulnaWeAN.png
+      descr: npm软件镜像站
+
+    - name: chromedriver1
+      link: http://chromedriver.storage.googleapis.com/index.html
+      avatar: https://s2.loli.net/2023/11/16/q4IFfGcRQaOhuol.webp
+      descr: 谷歌驱动旧版本
+
+    - name: chromedriver2
+      link: https://googlechromelabs.github.io/chrome-for-testing/#stable
+      avatar: https://s2.loli.net/2023/11/16/q4IFfGcRQaOhuol.webp
+      descr: 谷歌驱动新版本
+
+    - name: 谷歌离线扩展下载
+      link: https://crxdl.com/
+      avatar: https://s2.loli.net/2023/11/16/TU9Fsyu5ePXkhom.png
+      descr: 离线crx下载
