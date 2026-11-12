@@ -129,8 +129,8 @@ Expected: `build,dev,start,test,test:watch` (the `test:watch` key is listed afte
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
+    "module": "Node16",
+    "moduleResolution": "Node16",
     "lib": ["ES2022"],
     "outDir": "dist",
     "rootDir": "src",
