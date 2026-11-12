@@ -64,10 +64,9 @@ No database migration is required.
 
 ```bash
 npm install gray-matter
-npm install -D @types/gray-matter
 ```
 
-Expected: both commands exit 0; `package.json` gains `gray-matter` and `@types/gray-matter`.
+Expected: command exits 0; `package.json` gains `gray-matter`. Do **not** install `@types/gray-matter` — that package does not exist on npm; `gray-matter@4` ships its own TypeScript declarations.
 
 - [ ] **Step 2: Add the npm script**
 
