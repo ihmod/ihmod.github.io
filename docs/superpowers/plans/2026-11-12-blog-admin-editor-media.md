@@ -32,8 +32,8 @@ Expected: 16 files, 65 tests pass.
 ```
 src/services/media.ts          # magic-byte validation, save/list/delete
 src/routes/media.ts            # /api/media, /media, delete
-src/public/editor.js           # Vditor init + autosave
-src/public/media.js            # media page upload
+public/editor.js               # Vditor init + autosave
+public/media.js                # media page upload
 src/app.ts                     # multipart, static Vditor/uploads, CSP, media routes
 src/config.ts                  # UPLOADS_DIR
 src/lib/posts.ts               # autosavePost
@@ -458,6 +458,12 @@ describe('media routes', () => {
     expect(res.headers.location).toBe('/login');
   });
 
+  it('serves the media upload script from /static', async () => {
+    current = await makeTestApp();
+    const res = await current.app.inject({ method: 'GET', url: '/static/media.js' });
+    expect(res.statusCode).toBe(200);
+  });
+
   it('uploads, serves, and deletes an image', async () => {
     const { app, db, uploadsDir, cookie, csrf } = await setup();
     const boundary = '----ihmodtest';
@@ -673,7 +679,7 @@ export async function registerMediaRoutes(
 <%- include('partials/footer') %>
 ```
 
-- [ ] **Step 5: Implement `src/public/media.js`**
+- [ ] **Step 5: Implement `public/media.js`**
 
 ```js
 (function () {
@@ -803,7 +809,7 @@ Append to `public/admin.css`:
 npm test -- test/media-routes.test.ts
 ```
 
-Expected: 4 tests pass.
+Expected: 5 tests pass.
 
 If the static file test returns 403/404, verify the uploads static registration uses `decorateReply: false` and that `UPLOADS_DIR` exists before registration.
 
@@ -812,7 +818,7 @@ If the static file test returns 403/404, verify the uploads static registration 
 ```bash
 npm test
 npx tsc -p tsconfig.json --noEmit
-git add src/routes/media.ts src/public/media.js views/media.ejs src/app.ts views/partials/header.ejs public/admin.css test/media-routes.test.ts
+git add src/routes/media.ts public/media.js views/media.ejs src/app.ts views/partials/header.ejs public/admin.css test/media-routes.test.ts
 git commit -m "feat: add media library and upload endpoint"
 ```
 
@@ -1023,7 +1029,7 @@ git commit -m "feat: add post autosave endpoint"
 - Modify: `src/app.ts` (CSP)
 - Modify: `views/partials/header.ejs` (conditional Vditor CSS)
 - Modify: `views/posts/form.ejs`
-- Create: `src/public/editor.js`
+- Create: `public/editor.js`
 - Modify: `public/admin.css`
 - Test: `test/editor-render.test.ts`
 
@@ -1072,6 +1078,15 @@ describe('editor rendering', () => {
     const res = await current.app.inject({
       method: 'GET',
       url: '/static/vditor/index.min.js',
+    });
+    expect(res.statusCode).toBe(200);
+  });
+
+  it('serves the editor script', async () => {
+    current = await makeTestApp();
+    const res = await current.app.inject({
+      method: 'GET',
+      url: '/static/editor.js',
     });
     expect(res.statusCode).toBe(200);
   });
@@ -1155,7 +1170,7 @@ After the closing `</form>`, before the footer include, add:
 <script src="/static/editor.js"></script>
 ```
 
-- [ ] **Step 6: Create `src/public/editor.js`**
+- [ ] **Step 6: Create `public/editor.js`**
 
 ```js
 (function () {
@@ -1269,14 +1284,14 @@ After the closing `</form>`, before the footer include, add:
 npm test -- test/editor-render.test.ts
 ```
 
-Expected: 2 tests pass.
+Expected: 3 tests pass.
 
 - [ ] **Step 9: Full suite, typecheck, and commit**
 
 ```bash
 npm test
 npx tsc -p tsconfig.json --noEmit
-git add src/app.ts views/partials/header.ejs views/posts/form.ejs src/public/editor.js public/admin.css test/editor-render.test.ts
+git add src/app.ts views/partials/header.ejs views/posts/form.ejs public/editor.js public/admin.css test/editor-render.test.ts
 git commit -m "feat: integrate vditor editor and autosave client"
 ```
 
