@@ -222,7 +222,7 @@ Expected: FAIL because `src/lib/publish-format.ts` does not exist.
 - [ ] **Step 3: Implement `src/lib/publish-format.ts`**
 
 ```ts
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 
 export interface RenderPost {
   title: string;
@@ -732,7 +732,7 @@ Expected: FAIL because `src/services/publisher.ts` does not exist.
 import fs from 'node:fs';
 import path from 'node:path';
 import { eq } from 'drizzle-orm';
-import simpleGit, { type SimpleGit } from 'simple-git';
+import { simpleGit, type SimpleGit } from 'simple-git';
 import type { Db } from '../db/client';
 import { publishState } from '../db/schema';
 import { nowStamp } from '../lib/dates';
