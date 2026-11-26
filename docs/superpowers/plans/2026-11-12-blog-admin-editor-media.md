@@ -740,7 +740,7 @@ After the existing `fastifyStatic` registration for `public`, add two more stati
 
 ```ts
   await app.register(fastifyStatic, {
-    root: path.resolve(__dirname, '../node_modules/vditor/dist'),
+    root: path.resolve(__dirname, '../node_modules/vditor'),
     prefix: '/static/vditor/',
     decorateReply: false,
   });
@@ -750,6 +750,8 @@ After the existing `fastifyStatic` registration for `public`, add two more stati
     decorateReply: false,
   });
 ```
+
+Vditor's runtime defaults to the unpkg CDN. Serving the package root at `/static/vditor/` plus `cdn: '/static/vditor'` in `editor.js` (Task 5) makes every `/dist/...` asset resolve locally; do not remove the `cdn` option.
 
 Register media routes after the post routes:
 
@@ -1069,15 +1071,15 @@ describe('editor rendering', () => {
     expect(res.body).toContain('id="vditor"');
     expect(res.body).toContain('name="content_md"');
     expect(res.body).toContain('/static/editor.js');
-    expect(res.body).toContain('/static/vditor/index.min.js');
-    expect(res.body).toContain('/static/vditor/index.css');
+    expect(res.body).toContain('/static/vditor/dist/index.min.js');
+    expect(res.body).toContain('/static/vditor/dist/index.css');
   });
 
   it('serves the Vditor assets', async () => {
     current = await makeTestApp();
     const res = await current.app.inject({
       method: 'GET',
-      url: '/static/vditor/index.min.js',
+      url: '/static/vditor/dist/index.min.js',
     });
     expect(res.statusCode).toBe(200);
   });
@@ -1127,7 +1129,7 @@ Inside `<head>`, after the admin.css link, add:
 
 ```ejs
 <% if (typeof vditor !== 'undefined' && vditor) { %>
-  <link rel="stylesheet" href="/static/vditor/index.css">
+  <link rel="stylesheet" href="/static/vditor/dist/index.css">
 <% } %>
 ```
 
@@ -1166,7 +1168,7 @@ Change the main form tag to have an id:
 After the closing `</form>`, before the footer include, add:
 
 ```ejs
-<script src="/static/vditor/index.min.js"></script>
+<script src="/static/vditor/dist/index.min.js"></script>
 <script src="/static/editor.js"></script>
 ```
 
@@ -1191,6 +1193,7 @@ After the closing `</form>`, before the footer include, add:
     mode: 'sv',
     theme: 'classic',
     icon: 'material',
+    cdn: '/static/vditor',
     cache: { enable: false },
     value: input.value,
     toolbar: [
@@ -1270,6 +1273,8 @@ After the closing `</form>`, before the footer include, add:
   window.setInterval(save, 30000);
 })();
 ```
+
+Note: `cdn: '/static/vditor'` is required; otherwise Vditor fetches assets from unpkg, which the strict CSP blocks.
 
 - [ ] **Step 7: Add editor spacing to `public/admin.css`**
 
