@@ -1,5 +1,7 @@
 ---
 title: PHP学习
+date: '2025-07-15 23:51:31'
+updated: '2026-11-27 16:40:17'
 tags:
   - PHP
 categories: 基础
@@ -7,6 +9,7 @@ top_img: false
 description: 世界上最好的编程语言
 abbrlink: a6f23c9d
 ---
+
 {% flink %}
 - class_name: 参考文章
   class_desc: 
@@ -19,6 +22,4 @@ abbrlink: a6f23c9d
       link: /add/PHP2.html
       avatar: 
       descr: 4-6大章
-
-
 {% endflink %}

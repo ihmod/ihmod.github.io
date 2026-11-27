@@ -1,5 +1,7 @@
 ---
 title: kali搭建Nessus
+date: '2026-07-09 16:44:33'
+updated: '2026-07-09 16:44:33'
 tags:
   - 环境搭建
 categories: 网安

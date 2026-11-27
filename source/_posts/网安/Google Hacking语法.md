@@ -1,5 +1,7 @@
 ---
 title: Google Hacking 语法
+date: '2025-07-16 17:19:34'
+updated: '2025-07-16 17:19:34'
 tags:
   - google hacking
 categories: 网安
@@ -7,6 +9,7 @@ top_img: false
 description: Google Hacking 语法
 abbrlink: f8b0d770
 ---
+
 > 可以自行选择payload生成社工字典，使用工具跑一跑
 
 - 查找语法示例

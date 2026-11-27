@@ -1,5 +1,7 @@
 ---
 title: kali搭建AWVS
+date: '2025-07-15 23:33:40'
+updated: '2025-07-15 23:33:40'
 tags:
   - 环境搭建
 categories: 网安
@@ -7,6 +9,7 @@ top_img: false
 description: 手把手kali搭建AWVS
 abbrlink: 29e10dfb
 ---
+
 ### 下载资源
 
 链接
@@ -65,4 +68,3 @@ rm -fr /home/acunetix/.acunetix_trial/data/license/wa_data.dat
 删除用户
 userdel  acunetix
 ```
-
